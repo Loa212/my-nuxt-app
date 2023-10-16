@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <div id="app" class="bg-panel">
     <Navbar></Navbar>
     <!-- main view -->
     <Home></Home>
