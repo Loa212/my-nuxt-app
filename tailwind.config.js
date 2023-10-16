@@ -12,6 +12,7 @@ export default {
     extend: {
       colors: {
         primary: "#FF4D00",
+        panel: "#F1EFED",
       },
     },
   },
