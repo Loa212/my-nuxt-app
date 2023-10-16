@@ -1,6 +1,6 @@
 <template>
   <div
-    class="absolute inset-0 flex justify-center items-center w-full h-full bg-primary transition-transform duration-500 ease-in-out transform"
+    class="absolute inset-0 z-50 flex justify-center items-center w-full h-full bg-primary transition-transform duration-500 ease-in-out transform"
     :class="{ 'translate-y-0': loading, '-translate-y-full': !loading }"
   >
     <div class="h-[18rem] w-[12rem] rounded-full bg-white relative">
