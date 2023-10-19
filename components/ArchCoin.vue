@@ -18,9 +18,8 @@ export default {
   computed: {
     imgSrc: function () {
       return (
-        "https://archway.io/assets/token-animation/ArchCoin_180_" +
-        this.imgId +
-        ".png"
+        // "https://archway.io/assets/token-animation/ArchCoin_180_" +
+        "/ArchCoin/ArchCoin_180_" + this.imgId + ".png"
       );
     },
   },
