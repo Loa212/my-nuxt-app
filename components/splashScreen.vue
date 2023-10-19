@@ -24,6 +24,9 @@ export default {
     circle: true,
   }),
   mounted() {
+    // disable scroll
+    document.body.style.overflow = "hidden";
+
     // lower the circle
     setTimeout(() => {
       this.circle = false;
@@ -32,6 +35,8 @@ export default {
     // hide the loader
     setTimeout(() => {
       this.loading = false;
+      // enable scroll
+      document.body.style.overflow = "auto";
     }, 2500);
   },
 };
