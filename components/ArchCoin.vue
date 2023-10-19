@@ -1,36 +1,46 @@
 <template>
-  <v-img
+  <img
     id="token"
     width="500"
     height="500"
-    class="h-[300px] object-contain absolute top-0 right-0 mt-[80px] mr-[320px]"
-    src="../public/ArchCoin/ArchCoin_180_00000.png"
-    alt="archcoin"
+    class="h-[300px] transform rotate-y-180 object-contain absolute top-0 right-0 mt-[80px] mr-[320px]"
+    :src="imgSrc"
   />
 </template>
 
-<!-- <script>
+<script>
 export default {
   data() {
     return {
-      frameUri: "../public/ArchCoin/ArchCoin_180_00000.png",
-      frameStart: 0,
-      frameEnd: 39,
+      imgId: "00000",
     };
   },
-  methods: {
-    getImgUri() {
-      return require("../public/ArchCoin/ArchCoin_180_00000.png");
-      //   return (
-      //     "../public/ArchCoin/ArchCoin_180_" +
-      //     frame.toString().padStart(5, "0") +
-      //     ".png"
-      //   );
+  computed: {
+    imgSrc: function () {
+      return (
+        "https://archway.io/assets/token-animation/ArchCoin_180_" +
+        this.imgId +
+        ".png"
+      );
     },
   },
   mounted() {
-    // setup
-    var viewer = document.getElementById("token");
+    var interval = 50;
+    var totalImages = 40;
+
+    setInterval(() => {
+      var number = parseInt(this.imgId);
+
+      if (number === totalImages) {
+        number = 0;
+      } else {
+        number++;
+      }
+
+      var newNumber = number.toString().padStart(5, "0");
+
+      this.imgId = newNumber;
+    }, interval);
   },
 };
-</script> -->
+</script>
