@@ -1,53 +1,79 @@
 <template>
-  <img
-    id="token"
-    width="500"
-    height="500"
-    class="h-[300px] transform rotate-y-180 object-contain absolute top-0 right-0 mt-[80px] mr-[320px]"
-    :src="imgSrc"
-  />
+  <div id="archCoin"></div>
 </template>
 
 <script>
 export default {
   data() {
     return {
-      imgId: "00000",
+      imgId: 0,
+      // array containing all the images urls
+      imgSrcs: [...new Array(40).keys()].map(
+        (i) =>
+          "/ArchCoin/ArchCoin_180_" + i.toString().padStart(5, "0") + ".png"
+      ),
     };
   },
-  computed: {
-    imgSrc: function () {
-      return (
-        // "https://archway.io/assets/token-animation/ArchCoin_180_" +
-        "/ArchCoin/ArchCoin_180_" + this.imgId + ".png"
-      );
-    },
-  },
+
   beforeMount() {
-    // preload all the imgs
-    for (var i = 0; i < 40; i++) {
-      var number = i.toString().padStart(5, "0");
+    var wrapper = document.getElementById("archCoin");
+
+    this.imgSrcs.map((img, idx) => {
+      // create a new image element
       var img = new Image();
-      img.src = "/ArchCoin/ArchCoin_180_" + number + ".png";
-      console.log("loaded img n " + i);
-    }
+
+      // add an id to the img element
+      img.id = idx;
+
+      // hide all the images except the first one
+      if (idx > 0) {
+        img.style.display = "none";
+      }
+
+      // set the src to the first img url
+      img.src = this.imgSrcs[idx];
+
+      // img should fill the wrapper
+      img.width = 500;
+      img.height = 500;
+      img.classList.add(
+        "h-[300px]",
+        "transform",
+        "rotate-y-180",
+        "object-contain",
+        "absolute",
+        "top-0",
+        "right-0",
+        "mt-[80px]",
+        "mr-[320px]"
+      );
+
+      // insert the img element inside the wrapper element
+      wrapper.appendChild(img);
+    });
   },
+
   mounted() {
-    var interval = 30;
+    var interval = 33;
     var totalImages = 40;
 
     setInterval(() => {
-      var number = parseInt(this.imgId);
-
-      if (number === totalImages - 1) {
-        number = 0;
+      // get the current image
+      var currentImage = document.getElementById(this.imgId);
+      // hide the current image
+      currentImage.style.display = "none";
+      // increment the imgId if it's not the last image
+      if (this.imgId < totalImages - 1) {
+        this.imgId++;
       } else {
-        number++;
+        // otherwise reset the imgId to 0
+        this.imgId = 0;
       }
 
-      var newNumber = number.toString().padStart(5, "0");
-
-      this.imgId = newNumber;
+      // get the next image
+      var nextImage = document.getElementById(this.imgId);
+      // show the next image
+      nextImage.style.display = "block";
     }, interval);
   },
 };
