@@ -25,7 +25,7 @@ export default {
     },
   },
   mounted() {
-    var interval = 50;
+    var interval = 30;
     var totalImages = 40;
 
     setInterval(() => {
