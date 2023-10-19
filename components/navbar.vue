@@ -3,7 +3,7 @@
     <div
       class="navbar rounded-md w-full mx-auto transition-all duration-300"
       :class="{
-        'bg-white/90 backdrop-blur-sm backdrop-brightness-50 b max-w-6xl':
+        'bg-white backdrop-blur-sm backdrop-brightness-50 b max-w-6xl':
           scrolled,
         'bg-none max-w-7xl': !scrolled,
       }"
@@ -30,9 +30,10 @@
             tabindex="0"
             class="menu menu-sm dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52"
           >
-            <li><a>Item 1</a></li>
             <li>
-              <a>Parent</a>
+              <a>
+                <b> Parent </b>
+              </a>
               <ul class="p-2">
                 <li><a>Submenu 1</a></li>
                 <li><a>Submenu 2</a></li>
@@ -95,17 +96,146 @@
       </div>
       <div class="navbar-center hidden lg:flex">
         <ul class="menu menu-horizontal px-1">
-          <li><a>Item 1</a></li>
           <li tabindex="0">
-            <details>
-              <summary>Parent</summary>
-              <ul class="p-2">
-                <li><a>Submenu 1</a></li>
-                <li><a>Submenu 2</a></li>
+            <div
+              class="dropdown hover:text-primary active:bg-primary/10 focus:bg-primary/10 hover:bg-primary/10 visited:bg-primary/20 relative"
+            >
+              <label
+                tabindex="0"
+                class="cursor-pointer font-medium flex items-center justify-center gap-2 text-lg"
+                >Learn
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="top-[100%] text-slate-700 mt-2 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
               </ul>
-            </details>
+            </div>
           </li>
-          <li><a>Item 3</a></li>
+
+          <li tabindex="0">
+            <div
+              class="dropdown hover:text-primary active:bg-primary/10 focus:bg-primary/10 hover:bg-primary/10 visited:bg-primary/20 relative"
+            >
+              <label
+                tabindex="0"
+                class="cursor-pointer font-medium flex items-center justify-center gap-2 text-lg"
+                >Developers
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="top-[100%] text-slate-700 mt-2 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li tabindex="0">
+            <div
+              class="dropdown hover:text-primary active:bg-primary/10 focus:bg-primary/10 hover:bg-primary/10 visited:bg-primary/20 relative"
+            >
+              <label
+                tabindex="0"
+                class="cursor-pointer font-medium flex items-center justify-center gap-2 text-lg"
+                >Network
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="top-[100%] text-slate-700 mt-2 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul>
+            </div>
+          </li>
+
+          <li tabindex="0">
+            <div
+              class="dropdown hover:text-primary active:bg-primary/10 focus:bg-primary/10 hover:bg-primary/10 visited:bg-primary/20 relative"
+            >
+              <label
+                tabindex="0"
+                class="cursor-pointer font-medium flex items-center justify-center gap-2 text-lg"
+                >Community
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="16"
+                  height="16"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  class="lucide lucide-chevron-down"
+                >
+                  <path d="m6 9 6 6 6-6" />
+                </svg>
+              </label>
+              <ul
+                tabindex="0"
+                class="top-[100%] text-slate-700 mt-2 dropdown-content z-[1] menu p-2 shadow bg-base-100 rounded-box w-52"
+              >
+                <li><a>Item 1</a></li>
+                <li><a>Item 2</a></li>
+              </ul>
+            </div>
+          </li>
+          <li
+            class="cursor-pointer font-medium flex items-center justify-center gap-2 text-lg"
+          >
+            <a
+              href="#"
+              class="hover:text-primary active:bg-primary/10 focus:bg-primary/10 hover:bg-primary/10 visited:bg-primary/20"
+              >Ecosystem</a
+            >
+          </li>
         </ul>
       </div>
       <div class="navbar-end">

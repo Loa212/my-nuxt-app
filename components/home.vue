@@ -15,7 +15,7 @@
       </h1>
     </div>
     <div class="absolute right-0 lg:-mr-[380px] xl:-mr-[100px] z-0">
-      <ArchCoin />
+      <!-- <ArchCoin /> -->
       <img
         class="mx-auto max-w-[1206px]"
         src="https://archway.io/_nuxt/illustration-50.b39a23b0.png"
