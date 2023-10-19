@@ -23,6 +23,15 @@ export default {
       );
     },
   },
+  beforeMount() {
+    // preload all the imgs
+    for (var i = 0; i < 40; i++) {
+      var number = i.toString().padStart(5, "0");
+      var img = new Image();
+      img.src = "/ArchCoin/ArchCoin_180_" + number + ".png";
+      console.log("loaded img n " + i);
+    }
+  },
   mounted() {
     var interval = 30;
     var totalImages = 40;
@@ -30,7 +39,7 @@ export default {
     setInterval(() => {
       var number = parseInt(this.imgId);
 
-      if (number === totalImages) {
+      if (number === totalImages - 1) {
         number = 0;
       } else {
         number++;
