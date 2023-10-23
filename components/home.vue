@@ -29,7 +29,9 @@
         alt=""
       />
     </div>
-    <div class="w-full h-96"></div>
+    <div class="w-full h-96 z-10 mt-9">
+      <BasicForm></BasicForm>
+    </div>
     <div class="w-full h-96"></div>
     <div class="w-full h-96"></div>
   </main>
